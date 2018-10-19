@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/danielgomesmateus/facerecognition#readme",
   "dependencies": {
+    "consign": "^0.1.6",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
     "helmet": "^3.14.0",
+    "nodemon": "^1.18.4",
     "path": "^0.12.7"
   }
 }
