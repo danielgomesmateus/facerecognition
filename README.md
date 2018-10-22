@@ -20,6 +20,9 @@ git clone https://github.com/danielgomesmateus/facerecognition.git
 - fs
 - face-recognition
 - nodemon
+- consign
+- body-parser
+- express-validator
 
 Verifique no endereço abaixo, os requisitos necessários para o seu sistema operacional.
 

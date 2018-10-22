@@ -1,8 +1,8 @@
-const express = require('express');
-const fs      = require('fs');
-const path    = require('path');
-const helmet  = require('helmet');
-const consign = require('consign');
+const express          = require('express');
+const helmet           = require('helmet');
+const consign          = require('consign');
+const bodyParser       = require('body-parser');
+const expressValidator = require('express-validator');
 
 const app = express();
 
@@ -11,7 +11,10 @@ app.use(helmet());
 app.set('view engine', 'ejs');
 app.set('views', 'src/views');
 
-app.use(express.static('src/public/'))
+app.use(express.static('src/public/'));
+
+app.use(expressValidator());
+app.use(bodyParser.urlencoded({extended: true}));
 
 consign({})
   .include('src/controllers')
