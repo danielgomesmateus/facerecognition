@@ -5,8 +5,13 @@ module.exports = function(app) {
     app.src.controllers.ImagesController.index(app, request, response);
   });
 
-  app.get('/images/add', function(request, response) {
+  app.get('/images/extract', function(request, response) {
 
-    app.src.controllers.ImagesController.add(app, request, response);
+    app.src.controllers.ImagesController.extract(app, request, response);
+  });
+
+  app.get('/images/train', function(request, response) {
+
+    app.src.controllers.ImagesController.train(app, request, response);
   });
 };

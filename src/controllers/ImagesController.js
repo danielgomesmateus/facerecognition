@@ -4,8 +4,14 @@ module.exports.index = (app, request, response) => {
     model.index();
 };
 
-module.exports.add = (app, request, response) => {
+module.exports.extract = (app, request, response) => {
 
   let model = new app.src.models.ImagesModel(app, request, response);
-  model.add();
+  model.extract();
+};
+
+module.exports.train = (app, request, response) => {
+
+  let model = new app.src.models.ImagesModel(app, request, response);
+  model.train();
 };
