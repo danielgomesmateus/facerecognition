@@ -4,7 +4,7 @@ const consign          = require('consign');
 const bodyParser       = require('body-parser');
 const expressValidator = require('express-validator');
 
-const app = express();
+let app = express();
 
 app.use(helmet());
 
