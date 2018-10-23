@@ -30,11 +30,6 @@ class ImagesModel {
     const testeDataByClass = imagesByClass.map(imgs => imgs.slice(numTrainingFaces));
   };
 
-  add() {
-
-    this.response.send('Envio de imagens para reconhecimento.');
-  };
-
   extract() {
 
     const face       = require('face-recognition');
