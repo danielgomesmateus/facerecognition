@@ -28,8 +28,6 @@ class ImagesModel {
     const numTrainingFaces = 10;
     const trainDataByClass = imagesByClass.map(imgs => imgs.slice(0, numTrainingFaces));
     const testeDataByClass = imagesByClass.map(imgs => imgs.slice(numTrainingFaces));
-
-    this.extract();
   };
 
   add() {
@@ -41,6 +39,7 @@ class ImagesModel {
 
     const face       = require('face-recognition');
     const path       = require('path');
+
     const image      = face.loadImage(path.resolve('src/public/images/pattern/users.jpeg'));
     const detector   = face.FaceDetector();
     const targetSize = 150;
@@ -49,6 +48,19 @@ class ImagesModel {
     faceImages.forEach((picture, i) => {
 
       face.saveImage(path.resolve(`src/public/images/updated/face_${i}.png`), picture);
+    });
+  };
+
+  train() {
+
+    const face = require('face-recognition');
+
+    const recognizer = face.FaceRecognizer();
+
+    trainDataByClass.forEach((faces, labe) => {
+
+      const name = classNames[label];
+      recognizer.addFaces(faces, name);
     });
   };
 }
