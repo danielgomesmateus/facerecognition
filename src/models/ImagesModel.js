@@ -12,10 +12,10 @@ ImagesModel.prototype.index = (app, request, response) => {
 
   const allFiles      = fs.readdirSync(dataPath);
   const imagesByClass = classNames.map(
-    person =>
+    name =>
       allFiles
-      .filter(image => image.includes(person))
-      .map(image => path.join(dataPath, image))
+      .filter(file => name.includes(name))
+      .map(file => path.join(dataPath, file))
       .map(end => face.loadImage(end))
   );
 
